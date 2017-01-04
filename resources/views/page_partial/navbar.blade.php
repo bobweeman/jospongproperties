@@ -107,13 +107,14 @@
                             <ul class="dropdown-menu">
                                 <li class="menu-item ">
                                 <li><a href="{{route('multi_unit_building.create')}}" >New</a></li>
-                                <li><a href="{{route('building.index')}}" >Add Tenant</a></li>
+
                                 <li><a href="{{route('multi_unit_building.index')}}" >List</a></li>
                                 <li class="dropdown-submenu"><a href="" >Unit</a>
                                 <ul class="dropdown-menu ">
                                 <li class="menu-item ">
                                 <li><a href="{{route('building_unit.create')}}">New</a></li>
                                 <li><a href="{{route('building_unit.index')}}">List</a></li>
+                                 <li><a href="{{route('building.index')}}" >Add Tenant</a></li>
 
                                 </li>
                                 </ul>
