@@ -204,6 +204,17 @@
 
                             </ul>
                         </li>
+                        <li class="menu-item dropdown dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports</a>
+                            <ul class="dropdown-menu">
+                                <li class="menu-item ">
+                                    <a href="{{route('region_state.create')}}">New</a>
+                                    <a href="{{route('region_state.index')}}">List</a>
+
+                                </li>
+
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
