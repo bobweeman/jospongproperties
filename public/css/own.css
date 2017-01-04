@@ -1,0 +1,111 @@
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+    margin-left:-1px;
+    -webkit-border-radius:0 6px 6px 6px;
+    -moz-border-radius:0 6px 6px 6px;
+    border-radius:0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+    display:block;
+}
+.dropdown-submenu>a:after {
+    display:block;
+    content:" ";
+    float:right;
+    width:0;
+    height:0;
+    border-color:transparent;
+    border-style:solid;
+    border-width:5px 0 5px 5px;
+    border-left-color:#cccccc;
+    margin-top:5px;
+    margin-right:-10px;
+}
+.dropdown-submenu:hover>a:after {
+    border-left-color:#ffffff;
+}
+.dropdown-submenu.pull-left {
+    float:none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left:-100%;
+    margin-left:10px;
+    -webkit-border-radius:6px 0 6px 6px;
+    -moz-border-radius:6px 0 6px 6px;
+    border-radius:6px 0 6px 6px;
+}
+
+.btn-primary{
+    background-color: #303364;
+
+}
+.btn-warning{
+    background-color: #ed1c24;
+}
+.navbar-default{
+    background-color: #ffffff;
+    border-bottom: 2px solid #ed1c24;
+}
+.btn-danger{
+    background-color: #ed1c24;
+}
+.panel-default>.panel-heading {
+    color: #fff;
+    background-color: #ed1c24;
+    border-color: #ed1c24;
+
+}
+
+.navbar-brand>img{
+    top: -39px;
+    width: 170px;
+    height: 100px;
+    display: block;
+    position: relative;
+    margin-right: 20px;
+}
+
+/*.panel-body{*/
+    /*background-image: url("../logo.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position-y: -22px;*/
+    /*background-position-x: 600px;*/
+/*}*/
+
+body{
+    /*background-image: url("../main.jpg");*/
+    background-color: #fff8f6;
+
+
+    /*background-color: hsl(200,90%,93%);*/
+    /*background: -o-linear-gradient(180deg,red,red);*/
+    /*background: -moz-linear-gradient(90deg,red,red);*/
+    /*background: -webkit-linear-gradient(180deg,red,red);*/
+    background-repeat: no-repeat;
+
+
+
+}
+
+.main-page{
+    background-image: url("../main.jpg");
+    background-repeat: no-repeat;
+}
+.main-wel{
+    background-image: url("../logo.png");
+    background-repeat: no-repeat;
+
+}
+
+.text-white{
+    color: white;
+}
+
+.links > a{
+    color: white;
+}
