@@ -74,19 +74,20 @@
                                 @endif
                             </div>
                         </div>
-                        {{--<div class="form-group{{ $errors->has('tenant_id') ? ' has-error' : '' }}">--}}
-                            {{--{{Form::label('tenant',null,['class'=>'col-md-4 control-label'])}}--}}
+                        <div class="form-group{{ $errors->has('zoning') ? ' has-error' : '' }}">
+                            {{Form::label('zoning',null,['class'=>'col-md-4 control-label'])}}
 
 
-                            {{--<div class="col-md-6">--}}
-                                {{--{{Form::select('tenant_id',$tenants,null,['class'=>'form-control'])}}--}}
-                                {{--@if ($errors->has('tenant_id'))--}}
-                                    {{--<span class="help-block">--}}
-                                    {{--<strong>{{ $errors->first('tenant_id') }}</strong>--}}
-                                {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                            <div class="col-md-6">
+                                {{Form::select('zoning',['residential'=>'Residential','industrial'=>'Industrial','commercial'=>'Commercial',
+                                'agriculture'=>'Agriculture','civic-culture'=>'Civic Culture'],null,['class'=>'form-control'])}}
+                                @if ($errors->has('zoning'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('zoning') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('purchase_price') ? ' has-error' : '' }}">
                             {{Form::label('purchase_price',null,['class'=>'col-md-4 control-label'])}}
 

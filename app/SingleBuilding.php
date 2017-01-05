@@ -10,7 +10,8 @@ class SingleBuilding extends Model
 {
     //mass assignment
     protected $fillable=[
-        'name','address','purchase_price','property_tax','square_feet','status','city_id','district_id','region_id','country_id','tenant_id','purchaser_id'
+        'name','address','purchase_price','property_tax','square_feet','status','city_id','district_id','region_id',
+        'country_id','tenant_id','purchaser_id','zoning'
     ];
 
 

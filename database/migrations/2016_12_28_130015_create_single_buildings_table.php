@@ -27,6 +27,7 @@ class CreateSingleBuildingsTable extends Migration
             $table->string('square_feet')->nullable();
             $table->string('status');
             $table->string('district_id');
+            $table->string('zoning');
 
             $table->softDeletes(); //
 

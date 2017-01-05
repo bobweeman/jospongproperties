@@ -21,6 +21,7 @@
                             <th>Property Tax</th>
                             <th>Square Feet</th>
                             <th>Status</th>
+                            <th>Zoning</th>
                             <th></th>
 
                             
@@ -65,6 +66,7 @@
 
                                   <td>{{$building->square_feet}}</td>
                                   <td>{{$building->status}}</td>
+                                  <td>{{$building->zoning}}</td>
 
 
                                   <td><a href="{{route('single_building.edit',$building->id)}}" ><span class="fa fa-edit fa-2x"></span></a></td>

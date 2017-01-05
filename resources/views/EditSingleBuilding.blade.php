@@ -117,6 +117,20 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('zoning') ? ' has-error' : '' }}">
+                            {{Form::label('zoning',null,['class'=>'col-md-4 control-label'])}}
+
+
+                            <div class="col-md-6">
+                                {{Form::select('zoning',['residential'=>'Residential','industrial'=>'Industrial','commercial'=>'Commercial',
+                                'agriculture'=>'Agriculture','civic-culture'=>'Civic Culture'],null,['class'=>'form-control'])}}
+                                @if ($errors->has('zoning'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('zoning') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('square_feet') ? ' has-error' : '' }}">
                             {{Form::label('square_feet',null,['class'=>'col-md-4 control-label'])}}
 

@@ -32,7 +32,8 @@ class SingleBuildingRequest extends FormRequest
             'country_id'=>'required|numeric',
             'purchase_price'=>'required|numeric',
             'property_tax'=>'required|numeric',
-            'status'=>'required|min:2'
+            'status'=>'required|min:2',
+            'zoning'=>'required|min:2'
         ];
     }
 }
