@@ -24,7 +24,10 @@
 </head>
 <body>
     <div id="app">
+
+        @if(!Route::is('login') && !Route::is('register'))
        @include('page_partial.navbar')
+        @endif
         <div class="row">
             {{--<div class="col-md-10 col-md-offset-4">--}}
                 {{--@if(Session::has('success'))--}}

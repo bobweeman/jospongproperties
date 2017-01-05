@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::group([''],function(){
+Route::group(['middleware'=>'auth'],function(){
     //Accounting Route
     Route::resource('/accounting','AccountingController');
     Route::resource('/account','AccountController');
@@ -43,10 +43,10 @@ Route::group([''],function(){
 
 });
 
-Route::group(['prefix'=>'su'],function(){ //
+Route::group(['prefix'=>'su','middleware'=>'auth'],function(){ //
     Route::resource('tenant_res','SingelUnitResidentialTenantController');
 });
 
-Route::group(['prefix'=>'sr'],function(){ //
+Route::group(['prefix'=>'sr','middleware'=>'auth'],function(){ //
     Route::resource('tenant_comm','SingleUnitCommercialTenantController');
 });
