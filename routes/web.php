@@ -28,10 +28,12 @@ Route::group([''],function(){
     Route::resource('/vendor','VendorController');
     Route::resource('/tenant_com','TenantCommercialController'); //commercial
     Route::resource('/tenant','TenantController'); //residential
+    Route::resource('/subsidiary','SubsidiaryController'); //subsidiary
 
     Route::resource('/building','BuildingController');
     Route::resource('/building_unit','UnitController');
     Route::resource('/single_building','SingleBuildingController'); //single building REST
+    Route::resource('/single_building_purchaser','SingleUnitPurchaserController'); //single building REST
     Route::resource('/multi_unit_building','MultiBuildingController'); //single building REST
 
     Route::resource('/country','CountryController');

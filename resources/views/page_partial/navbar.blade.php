@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
+    <div class="col-md-12">
         <div class="navbar-header">
 
             <!-- Collapsed Hamburger -->
@@ -19,22 +19,22 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                &nbsp;<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        Accounting <span class="fa fa-caret-down"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{route('accounting.create')}}" >New</a></li>
-                        <li><a href="{{route('accounting.create')}}" >List</a></li>
 
-
-                    </ul>
-                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         Vendor <span class="fa fa-caret-down"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="{{route('vendor.create')}}" >New</a></li>
                         <li><a href="{{route('vendor.index')}}" >List</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Subsidiary <span class="fa fa-caret-down"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{route('subsidiary.create')}}" >New</a></li>
+                        <li><a href="{{route('subsidiary.index')}}" >List</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -67,13 +67,23 @@
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        Building <span class="fa fa-caret-down"></span></a>
+                        Property <span class="fa fa-caret-down"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li class="menu-item dropdown dropdown-submenu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Single Residence</a>
                             <ul class="dropdown-menu">
                                 <li class="menu-item ">
                                 <li><a href="{{route('single_building.create')}}" >New</a></li>
+                                <li class="dropdown-submenu"><a href="" >Purchaser</a>
+                                    <ul class="dropdown-menu ">
+                                        <li class="menu-item ">
+                                        <li><a href="{{route('single_building_purchaser.create')}}" >New</a></li>
+                                        <li><a href="{{route('single_building_purchaser.index')}}" >List</a></li>
+
+                                        </li>
+
+                                        </li>
+                                    </ul>
                                 <li class="dropdown-submenu"><a href="" >Tenant</a>
                                     <ul class="dropdown-menu ">
                                         <li class="menu-item ">
@@ -204,18 +214,58 @@
 
                             </ul>
                         </li>
-                        <li class="menu-item dropdown dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports</a>
-                            <ul class="dropdown-menu">
-                                <li class="menu-item ">
-                                    <a href="{{route('region_state.create')}}">New</a>
-                                    <a href="{{route('region_state.index')}}">List</a>
-
-                                </li>
-
-                            </ul>
-                        </li>
+                      
                     </ul>
+                </li>
+                <li class="dropdown disabled">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Physical <span class="fa fa-caret-down"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        {{--<li><a href="{{route('reports.create')}}" >New</a></li>--}}
+                        {{--<li><a href="{{route('reports.index')}}" >List</a></li>--}}
+                    </ul>
+                </li>
+                <li class="dropdown disabled">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Legal <span class="fa fa-caret-down"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        {{--<li><a href="{{route('reports.create')}}" >New</a></li>--}}
+                        {{--<li><a href="{{route('reports.index')}}" >List</a></li>--}}
+                    </ul>
+                </li>
+                <li class="dropdown disabled">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Transactions <span class="fa fa-caret-down"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        {{--<li><a href="{{route('reports.create')}}" >New</a></li>--}}
+                        {{--<li><a href="{{route('reports.index')}}" >List</a></li>--}}
+                    </ul>
+                </li>
+                <li class="dropdown disabled">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Multimedia <span class="fa fa-caret-down"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        {{--<li><a href="{{route('reports.create')}}" >New</a></li>--}}
+                        {{--<li><a href="{{route('reports.index')}}" >List</a></li>--}}
+                    </ul>
+                </li>
+                <li class="dropdown disabled">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Reports <span class="fa fa-caret-down"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        {{--<li><a href="{{route('reports.create')}}" >New</a></li>--}}
+                        {{--<li><a href="{{route('reports.index')}}" >List</a></li>--}}
+                    </ul>
+                </li>
+                &nbsp;<li class="dropdown disabled">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                Accounting <span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                {{--<li><a href="{{route('accounting.create')}}" >New</a></li>--}}
+                {{--<li><a href="{{route('accounting.create')}}" >List</a></li>--}}
+
+
+                </ul>
                 </li>
             </ul>
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVendorsTable extends Migration
+class CreateSubsidiariesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateVendorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('vendors', function (Blueprint $table) {
+        Schema::create('subsidiaries', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('name');
-            $table->string('contact_name');
-            $table->string('phone');
-            $table->string('type');
-            $table->string('institution');
-            $table->string('email');
+            $table->string('web');
+            $table->string('telephone');
             $table->text('address');
-            $table->integer('city_id')->default(0);
-            $table->integer('country_id')->default(0);
+            $table->text('email');
+
             $table->softDeletes();
             $table->timestamps();
         });
@@ -36,6 +34,6 @@ class CreateVendorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vendors');
+        Schema::dropIfExists('subsidiaries');
     }
 }

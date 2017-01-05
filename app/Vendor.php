@@ -9,7 +9,7 @@ class Vendor extends Model
 {
     //mass assignment
     protected $fillable=[
-        'name','contact_name','phone','address','email','city_id','country_id'
+        'name','contact_name','phone','address','email','city_id','country_id','type','institution'
     ];
     //softdeletes
     use SoftDeletes;

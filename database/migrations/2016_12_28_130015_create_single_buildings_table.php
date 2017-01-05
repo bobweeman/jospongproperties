@@ -20,6 +20,7 @@ class CreateSingleBuildingsTable extends Migration
             $table->string('address');
             $table->integer('city_id');
             $table->integer('country_id');
+            $table->integer('purchaser_id')->nullable();
             $table->integer('tenant_id')->nullable();
             $table->string('purchase_price')->nullable();
             $table->string('property_tax')->nullable();

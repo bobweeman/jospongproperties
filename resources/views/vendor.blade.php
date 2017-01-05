@@ -3,7 +3,7 @@
 @section('content')
 <div class="">
     <div class="row">
-        <div class="col-md-9 col-md-offset-1">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">New Vendor Entry</div>
 
@@ -42,7 +42,33 @@
                                 @endif
                             </div>
                         </div>
+                    <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+                        {{Form::label('type',null,['class'=>'col-md-4 control-label'])}}
 
+
+                        <div class="col-md-6">
+                            {{Form::select('type',["other"=>"Other",'stool'=>'Stool','state'=>'State',
+                            'family'=>'family','company'=>'Company','private'=>'Private'],null,['class'=>'form-control'])}}
+                            @if ($errors->has('type'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('type') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group{{ $errors->has('institution') ? ' has-error' : '' }}">
+                        <label for="contact name" class="col-md-4 control-label">Contact Name</label>
+
+                        <div class="col-md-6">
+                            <input type="text" id="institution"  class="form-control"  name="institution" value="{{ old('institution') }}" required autofocus>
+
+                            @if ($errors->has('institution'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('institution') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
 
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="phone" class="col-md-4 control-label">Phone Number</label>

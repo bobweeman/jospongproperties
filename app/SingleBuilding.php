@@ -10,7 +10,7 @@ class SingleBuilding extends Model
 {
     //mass assignment
     protected $fillable=[
-        'name','address','purchase_price','property_tax','square_feet','status','city_id','district_id','region_id','country_id','tenant_id'
+        'name','address','purchase_price','property_tax','square_feet','status','city_id','district_id','region_id','country_id','tenant_id','purchaser_id'
     ];
 
 
@@ -37,6 +37,9 @@ class SingleBuilding extends Model
     }
     public function tenantCom(){//tenant relationship - single unit building
         return $this->belongsTo('\App\TenantCommercial','tenant_id','id');
+    }
+    public function purchaser(){//purchaser relationship - single unit building
+        return $this->belongsTo('\App\Subsidiary','purchaser_id','id');
     }
 
 //    //creating an accessor for ID
