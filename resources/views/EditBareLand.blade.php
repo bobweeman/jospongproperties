@@ -5,11 +5,11 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit Single Building Entry</div>
+                    <div class="panel-heading">Edit Bare Land Entry</div>
 
                     <div class="panel-body">
 
-                        {{ Form::model($building, array('route' => ['single_building.update', $building->id],'class'=>'form-horizontal')) }}
+                        {{ Form::model($building, array('route' => ['bare_land.update', $building->id],'class'=>'form-horizontal')) }}
                         <input type="hidden" name="_method" value="PATCH">
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             {{Form::label('Name',null,['class'=>'col-md-4 control-label'])}}

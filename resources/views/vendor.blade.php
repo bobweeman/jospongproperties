@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="form-group{{ $errors->has('institution') ? ' has-error' : '' }}">
-                        <label for="contact name" class="col-md-4 control-label">Contact Name</label>
+                        <label for="contact name" class="col-md-4 control-label">Institution</label>
 
                         <div class="col-md-6">
                             <input type="text" id="institution"  class="form-control"  name="institution" value="{{ old('institution') }}" required autofocus>

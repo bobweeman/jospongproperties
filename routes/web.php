@@ -40,6 +40,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::resource('/city','CityController');
     Route::resource('/district','DistrictController');
     Route::resource('/region_state','RegionStateController');
+    Route::resource('/bare_land','BareLandController');
+
 
 });
 

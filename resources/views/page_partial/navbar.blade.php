@@ -111,6 +111,48 @@
 
                             </ul>
                         </li>
+                        <li class="menu-item dropdown dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bare Lands</a>
+                            <ul class="dropdown-menu">
+                                <li class="menu-item ">
+                                <li><a href="{{route('bare_land.create')}}" >New</a></li>
+                                <li class="dropdown-submenu"><a href="" >Purchaser</a>
+                                    <ul class="dropdown-menu ">
+                                        <li class="menu-item ">
+                                        {{--<li><a href="{{route('bare_land_purchaser.create')}}" >New</a></li>--}}
+                                        {{--<li><a href="{{route('bare_land_purchaser.index')}}" >List</a></li>--}}
+
+                                        </li>
+
+                                        </li>
+                                    </ul>
+                                <li class="dropdown-submenu"><a href="" >Tenant</a>
+                                    <ul class="dropdown-menu ">
+                                        <li class="menu-item ">
+                                        <li class="dropdown-submenu"><a href="" >Residential Tenant</a>
+                                            <ul class="dropdown-menu ">
+                                                {{--<li><a href="{{route('bare_land_tenant_res.create')}}" >New </a></li>--}}
+                                                {{--<li><a href="{{route('bare_land_tenant_res.index')}}" >List </a></li>--}}
+
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item ">
+                                        <li class="dropdown-submenu"><a href="" >Commercial Tenant</a>
+                                            <ul class="dropdown-menu">
+                                                {{--<li><a href="{{route('bare_land_tenant_com.create')}}" >New </a></li>--}}
+                                                {{--<li><a href="{{route('bare_land_tenant_com.index')}}" >List </a></li>--}}
+
+                                            </ul>
+                                        </li>
+                                        </li>
+
+                                        </li>
+                                    </ul>
+                                <li><a href="{{route('tenant_res.index')}}" >List</a></li>
+                                </li>
+
+                            </ul>
+                        </li>
 
                         <li class="menu-item dropdown dropdown-submenu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Multi-Unit Building</a>
