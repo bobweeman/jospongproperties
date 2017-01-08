@@ -41,6 +41,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::resource('/district','DistrictController');
     Route::resource('/region_state','RegionStateController');
     Route::resource('/bare_land','BareLandController');
+    Route::resource('/bare_land_purchaser','BareLandPurchaserController');
 
 
 });

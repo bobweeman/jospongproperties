@@ -34,5 +34,7 @@ class BareLand extends Model
     }
     public function purchaser(){//purchaser relationship - single unit building
         return $this->belongsTo('\App\Subsidiary','purchaser_id','id');
+
     }
+
 }

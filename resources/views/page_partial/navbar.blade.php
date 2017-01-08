@@ -119,8 +119,8 @@
                                 <li class="dropdown-submenu"><a href="" >Purchaser</a>
                                     <ul class="dropdown-menu ">
                                         <li class="menu-item ">
-                                        {{--<li><a href="{{route('bare_land_purchaser.create')}}" >New</a></li>--}}
-                                        {{--<li><a href="{{route('bare_land_purchaser.index')}}" >List</a></li>--}}
+                                        <li><a href="{{route('bare_land_purchaser.create')}}" >New</a></li>
+                                        <li><a href="{{route('bare_land_purchaser.index')}}" >List</a></li>
 
                                         </li>
 
@@ -148,7 +148,7 @@
 
                                         </li>
                                     </ul>
-                                <li><a href="{{route('tenant_res.index')}}" >List</a></li>
+                                <li><a href="{{route('bare_land.index')}}" >List</a></li>
                                 </li>
 
                             </ul>

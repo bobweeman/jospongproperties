@@ -15,7 +15,7 @@
 
 
                             <div class="col-md-6">
-                                {{Form::text('building_id',$singleUnit->name,['class'=>'form-control'])}}
+                                {{Form::text('building_id',$singleUnit->name,['class'=>'form-control disabled'])}}
                                 @if ($errors->has('building_id'))
                                     <span class="help-block">
                                     <strong>{{ $errors->first('building_id') }}</strong>
