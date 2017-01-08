@@ -51,7 +51,7 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script src="/js/own.js"></script>
+    <script src="/js/physical_hide.js" type="text/javascript"></script>
     <!--Notifications-->
     <script>
         @if(Session::has('success'))

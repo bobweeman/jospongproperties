@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\SingleBuilding;
 use Illuminate\Http\Request;
 
-class PhysicalController extends Controller
+class SingleBuildingPhysicalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +25,8 @@ class PhysicalController extends Controller
     public function create()
     {
         //
-        return "";
+        $buildings = SingleBuilding::orderBy('name','asc')->pluck('name','id');
+        return view('phyiscal_single',compact('buildings'));
     }
 
     /**

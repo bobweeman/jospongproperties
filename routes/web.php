@@ -42,6 +42,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::resource('/region_state','RegionStateController');
     Route::resource('/bare_land','BareLandController');
     Route::resource('/bare_land_purchaser','BareLandPurchaserController');
+    Route::resource('/single_physical','SingleBuildingPhysicalController');
 
 
 });
