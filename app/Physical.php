@@ -7,4 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Physical extends Model
 {
     //
+    protected $fillable=[
+      'fenced','fence_type','gated','gate_type','occupier','vulnerability','encroached','encroach_details','building_id'
+    ];
+
+    //creating relationships
+    public function SingleBuilding(){
+        return $this->hasOne('App\SingleBuilding','id','building_id');
+    }
 }

@@ -13,7 +13,7 @@ class PhysicalRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,11 @@ class PhysicalRequest extends FormRequest
     {
         return [
             //
+//            'fenced'=>'required',
+//            'gated'=>'required',
+//            'occupier'=>'required',
+//            'encroach'=>'required',
+            'building_id'=>'required|numeric',
         ];
     }
 }

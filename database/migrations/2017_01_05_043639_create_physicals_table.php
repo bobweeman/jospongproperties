@@ -17,13 +17,13 @@ class CreatePhysicalsTable extends Migration
             $table->increments('id');
 
             $table->string('fenced');
-            $table->string('fence_type')->nullable();
+            $table->string('fence_type')->default('No Data');
             $table->string('gated');
-            $table->string('gate_type')->nullable();
-            $table->string('occupier')->nullable();
+            $table->string('gate_type')->default('No Data');
+            $table->string('occupier')->default('No Data');
             $table->text('vulnerability')->nullable();
             $table->string('encroached');
-            $table->string('encroach_details')->nullable();
+            $table->string('encroach_details')->default('No Data');
             $table->integer('building_id');
             $table->timestamps();
         });

@@ -8,7 +8,7 @@
                 <div class="panel-heading">New Physical Details Entry (Single Unit Buildings)</div>
 
                 <div class="panel-body">
-                    {!! Form::open(['route'=>'subsidiary.store','class'=>'form-horizontal'])!!}
+                    {!! Form::open(['route'=>'single_physical.store','class'=>'form-horizontal'])!!}
 
                     <div class="form-group{{ $errors->has('building_id') ? ' has-error' : '' }}">
                         {{Form::label('building',null,['class'=>'col-md-4 control-label'])}}
@@ -57,7 +57,7 @@
 
 
                         <div class="col-md-6">
-                            {{Form::select('gated',['yes'=>'Yes','no'=>'No'],['no'],['class'=>'form-control'])}}
+                            {{Form::select('gated',['yes'=>'Yes','no'=>'No'],['no'],['class'=>'form-control','id'=>"gated"])}}
                             @if ($errors->has('gated'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('gated') }}</strong>
@@ -65,7 +65,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group{{ $errors->has('gate_type') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('gate_type') ? ' has-error' : '' }}" id="gate_type">
                         {{Form::label('gate_type',null,['class'=>'col-md-4 control-label'])}}
 
 
@@ -84,7 +84,7 @@
 
 
                         <div class="col-md-6">
-                            {{Form::select('encroached',['yes'=>'Yes','no'=>'No'],['no'],['class'=>'form-control'])}}
+                            {{Form::select('encroached',['yes'=>'Yes','no'=>'No'],['no'],['class'=>'form-control','id'=>"encroach"])}}
                             @if ($errors->has('encroached'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('encroached') }}</strong>
@@ -92,7 +92,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group{{ $errors->has('encroach_details') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('encroach_details') ? ' has-error' : '' }} "id=encroach_details>
                         {{Form::label('encroachment_details',null,['class'=>'col-md-4 control-label'])}}
 
 

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PhysicalRequest;
+use App\Physical;
 use App\SingleBuilding;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Session;
 
 class SingleBuildingPhysicalController extends Controller
 {
@@ -15,6 +19,9 @@ class SingleBuildingPhysicalController extends Controller
     public function index()
     {
         //
+        $physicals = Physical::with('SingleBuilding')->latest()->orderBy('created_at','desc')->get();
+//        dd($physicals);
+        return view('ListSingleBuildingPhysical',compact('physicals'));
     }
 
     /**
@@ -35,9 +42,12 @@ class SingleBuildingPhysicalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PhysicalRequest $request)
     {
         //
+        Physical::create($request->all());
+        Session::flash('success','Phyical details for single unit building created succcessfully');
+        return redirect(route('single_physical.index'));
     }
 
     /**
@@ -60,6 +70,9 @@ class SingleBuildingPhysicalController extends Controller
     public function edit($id)
     {
         //
+        $physical = Physical::with('SingleBuilding')->find($id);
+//        dd($physical);
+        return view('EditSingleBuildingPhysical',compact('physical'));
     }
 
     /**
@@ -72,6 +85,26 @@ class SingleBuildingPhysicalController extends Controller
     public function update(Request $request, $id)
     {
         //
+//        dd($request->all());
+       Physical::find($id)->update($request->all());
+        $a=Physical::find($id);
+//        dd(Input::get('encroached'));
+        if(Input::get('fenced')=='no'){
+            $a->fence_type =0;
+            $a->update();
+        }
+        if(Input::get('gated')=='no'){
+            $a->gate_type =0;
+            $a->update();
+        }
+        if(Input::get('encroached')=='no'){
+            $a->encroach_details ='';
+            $a->update();
+        }
+
+//
+        Session::flash('info','Physical details for single unit building updated succcessfully');
+        return redirect(route('single_physical.index'));
     }
 
     /**
@@ -83,5 +116,9 @@ class SingleBuildingPhysicalController extends Controller
     public function destroy($id)
     {
         //
+        Physical::destroy($id);
+
+        Session::flash('error','Physical details for single unit building deleted succcessfully');
+        return redirect(route('single_physical.index'));
     }
 }
