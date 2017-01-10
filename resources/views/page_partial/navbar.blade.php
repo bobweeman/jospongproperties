@@ -126,28 +126,7 @@
 
                                         </li>
                                     </ul>
-                                <li class="dropdown-submenu"><a href="" >Tenant</a>
-                                    <ul class="dropdown-menu ">
-                                        <li class="menu-item ">
-                                        <li class="dropdown-submenu"><a href="" >Residential Tenant</a>
-                                            <ul class="dropdown-menu ">
-                                                {{--<li><a href="{{route('bare_land_tenant_res.create')}}" >New </a></li>--}}
-                                                {{--<li><a href="{{route('bare_land_tenant_res.index')}}" >List </a></li>--}}
 
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item ">
-                                        <li class="dropdown-submenu"><a href="" >Commercial Tenant</a>
-                                            <ul class="dropdown-menu">
-                                                {{--<li><a href="{{route('bare_land_tenant_com.create')}}" >New </a></li>--}}
-                                                {{--<li><a href="{{route('bare_land_tenant_com.index')}}" >List </a></li>--}}
-
-                                            </ul>
-                                        </li>
-                                        </li>
-
-                                        </li>
-                                    </ul>
                                 <li><a href="{{route('bare_land.index')}}" >List</a></li>
                                 </li>
 
