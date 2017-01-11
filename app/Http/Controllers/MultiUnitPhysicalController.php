@@ -6,6 +6,7 @@ use App\Http\Requests\PhysicalRequest;
 use App\MultiBuilding;
 use App\Physical;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Session;
 
 class MultiUnitPhysicalController extends Controller
@@ -81,7 +82,7 @@ class MultiUnitPhysicalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PhysicalRequest $request, $id)
+    public function update(Request $request, $id)
     {
         //
 //        dd($request->all());
