@@ -23,7 +23,7 @@ class CreateLegalsTable extends Migration
             $table->text('stamp_duty_details')->nullable();
             $table->string('registered_deed');
             $table->text('registered_deed_details')->nullable();
-            $table->string('registered_title');
+            $table->string('registered_title')->nullable();
             $table->text('registered_title_details')->nullable();
             $table->string('litigation_status');
             $table->text('litigation_status_details')->nullable();

@@ -18,6 +18,8 @@ class SingleLegalController extends Controller
     public function index()
     {
         //
+        $legals = Legal::with('SingleBuilding')->latest()->orderBy('created_at','desc')->get();
+        return view('ListSingleBuildingLegal',compact('legals'));
     }
 
     /**
@@ -43,7 +45,7 @@ class SingleLegalController extends Controller
         //
         Legal::create($request->all());
         Session::flash('success','Legal details for single unit created successfully');
-
+        return redirect(route('single_legal.index'));
     }
 
     /**
