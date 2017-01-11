@@ -165,7 +165,7 @@
                             <ul class="dropdown-menu">
                                 <li class="menu-item ">
                                     <a href="{{route('country.create')}}">New</a>
-                                    <a href="{{route('tenant_com.create')}}">List</a>
+                                    <a href="{{route('country.index')}}">List</a>
                                 </li>
 
                             </ul>
