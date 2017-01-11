@@ -256,8 +256,8 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bare Land</a>
                             <ul class="dropdown-menu">
                                 <li class="menu-item ">
-                                {{--<li><a href="{{route('physical.create')}}" >New</a></li>--}}
-                                {{--<li><a href="{{route('physical.index')}}" >List</a></li>--}}
+                                <li><a href="{{route('bare_land_physical.create')}}" >New</a></li>
+                                <li><a href="{{route('bare_land_physical.index')}}" >List</a></li>
                                 </li>
 
                             </ul>

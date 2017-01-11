@@ -43,6 +43,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::resource('/bare_land','BareLandController');
     Route::resource('/bare_land_purchaser','BareLandPurchaserController');
     Route::resource('/single_physical','SingleBuildingPhysicalController');
+    Route::resource('/bare_land_physical','BareLandPhysicalController');
 
 
 });

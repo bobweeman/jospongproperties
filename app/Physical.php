@@ -15,4 +15,8 @@ class Physical extends Model
     public function SingleBuilding(){
         return $this->hasOne('App\SingleBuilding','id','building_id');
     }
+
+    public function BareLand(){
+        return $this->hasOne('App\BareLand','id','building_id');
+    }
 }
