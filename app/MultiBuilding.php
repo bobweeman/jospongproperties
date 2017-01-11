@@ -19,7 +19,7 @@ class MultiBuilding extends Model
 
     //creating relationships
     public function units(){
-        return $this->hasMany('\App\Unit','id','unit_id');
+        return $this->hasMany('\App\Unit','building_id','id');
     }
     public function country(){//country relationship
         return $this->belongsTo('\App\Country','country_id','id');

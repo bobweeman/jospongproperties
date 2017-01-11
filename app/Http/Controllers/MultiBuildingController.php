@@ -21,7 +21,7 @@ class MultiBuildingController extends Controller
     {
         //
         $buildings = MultiBuilding::latest()->orderBy('created_at','desc')->with('units','city','district','country')->get();
-
+//dd($buildings);
         return view('ListMultiBuilding',compact('buildings'));
     }
 

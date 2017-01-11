@@ -28,9 +28,9 @@
 
 </head>
 <body>
+<div class="se-pre-con"></div>
 
     <div id="app">
-        <div class="se-pre-con"></div>
         @if(!Route::is('login') && !Route::is('register'))
        @include('page_partial.navbar')
         @endif
