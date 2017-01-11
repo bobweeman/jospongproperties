@@ -21,10 +21,16 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    {{--<script src="/js/modernizr.js"></script>--}}
+
+
 </head>
 <body>
-    <div id="app">
 
+    <div id="app">
+        <div class="se-pre-con"></div>
         @if(!Route::is('login') && !Route::is('register'))
        @include('page_partial.navbar')
         @endif
@@ -51,6 +57,7 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/own.js"></script>
     <script src="/js/physical_hide.js" type="text/javascript"></script>
     <!--Notifications-->
     <script>
