@@ -61,6 +61,19 @@
                                 @endif
                             </div>
                         </div>
+                    <div class="form-group{{ $errors->has('region_id') ? ' has-error' : '' }}">
+                        {{Form::label('Region/State',null,['class'=>'col-md-4 control-label'])}}
+
+
+                        <div class="col-md-6">
+                            {{Form::select('region_id',$regions,null,['class'=>'form-control'])}}
+                            @if ($errors->has('region_id'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('region_id') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
                         <div class="form-group{{ $errors->has('country_id') ? ' has-error' : '' }}">
                             {{Form::label('country',null,['class'=>'col-md-4 control-label'])}}
 

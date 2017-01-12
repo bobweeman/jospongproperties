@@ -48,3 +48,11 @@ $factory->define(App\City::class, function (Faker\Generator $faker) {
 
     ];
 });
+$factory->define(App\RegionState::class, function (Faker\Generator $faker) {
+
+
+    return [
+        'name' => $faker->state,
+
+    ];
+});

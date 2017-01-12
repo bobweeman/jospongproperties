@@ -6,6 +6,7 @@ use App\City;
 use App\Country;
 use App\District;
 use App\Http\Requests\SingleBuildingRequest;
+use App\RegionState;
 use App\SingleBuilding;
 use App\Tenant;
 use App\TenantCommercial;
@@ -39,7 +40,8 @@ class SingleBuildingController extends Controller
         $cities = City::latest()->orderBy('name','desc')->pluck('name','id');
         $districts = District::latest()->orderBy('name','desc')->pluck('name','id');
         $countries = Country::latest()->orderBy('name','desc')->pluck('name','id');
-        return view('single_building',compact('tenants','cities','countries','districts'));
+        $regions = RegionState::latest()->orderBy('name','desc')->pluck('name','id');
+        return view('single_building',compact('tenants','cities','countries','districts','regions'));
     }
 
     /**
@@ -53,7 +55,10 @@ class SingleBuildingController extends Controller
         //
 
 //        dd($request->all());
-        SingleBuilding::create($request->all());
+        $current =  SingleBuilding::create($request->all());
+        $generator = "single".SingleBuilding::all()->count();
+        $current->real_id = $generator;
+        $current->update();
         Session::flash('success','Building created successfully');
 
         return redirect(route('single_building.index'));
@@ -83,10 +88,11 @@ class SingleBuildingController extends Controller
         $res  = Tenant::all()->pluck('full_name','id')->toArray(); //residential tenants
         $tenants = array_merge($com,$res); //merge both tenants groups
         $cities = City::latest()->orderBy('name','desc')->pluck('name','id');
+        $regions = RegionState::latest()->orderBy('name','desc')->pluck('name','id');
         $districts = District::latest()->orderBy('name','desc')->pluck('name','id');
         $countries = Country::latest()->orderBy('name','desc')->pluck('name','id');
-        $building=SingleBuilding::with('city','tenant','district')->find($id);
-        return view('EditSingleBuilding',compact('building','tenants','cities','countries','districts'));
+        $building=SingleBuilding::with('city','tenant','district','region')->find($id);
+        return view('EditSingleBuilding',compact('building','tenants','cities','countries','districts','regions'));
     }
 
     /**

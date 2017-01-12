@@ -19,6 +19,7 @@ class CreateBareLandsTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->integer('city_id');
+            $table->integer('region_id');
             $table->integer('country_id');
             $table->integer('purchaser_id')->nullable();
             $table->integer('tenant_id')->nullable();
@@ -27,6 +28,8 @@ class CreateBareLandsTable extends Migration
             $table->string('square_feet')->nullable();
             $table->string('status');
             $table->string('district_id');
+            $table->string('real_id')->nullable(); //foreign key
+
             $table->string('zoning');
 
             $table->timestamps();

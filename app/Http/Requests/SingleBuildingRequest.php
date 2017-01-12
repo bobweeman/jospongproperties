@@ -30,6 +30,7 @@ class SingleBuildingRequest extends FormRequest
             'district_id'=>'required|numeric',
             'city_id'=>'required|numeric',
             'country_id'=>'required|numeric',
+            'region_id'=>'required|numeric',
             'purchase_price'=>'required|numeric',
             'property_tax'=>'required|numeric',
             'status'=>'required|min:2',

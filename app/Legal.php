@@ -17,4 +17,9 @@ class Legal extends Model
     public function SingleBuilding(){
         return $this->belongsTo('App\SingleBuilding','building_id','id');
     }
+
+    //creating relationship
+    public function BareLand(){
+        return $this->belongsTo('App\BareLand','building_id','id');
+    }
 }

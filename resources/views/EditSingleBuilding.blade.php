@@ -42,7 +42,7 @@
 
 
                             <div class="col-md-6">
-                                {{Form::select('district_id',$districts, $building->district->name,['class'=>'form-control'])}}
+                                {{Form::select('district_id',$districts, $building->district->id,['class'=>'form-control'])}}
                                 @if ($errors->has('district_id'))
                                     <span class="help-block">
                                     <strong>{{ $errors->first('district_id') }}</strong>
@@ -59,6 +59,19 @@
                                 @if ($errors->has('city_id'))
                                     <span class="help-block">
                                     <strong>{{ $errors->first('city_id') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('region_id') ? ' has-error' : '' }}">
+                            {{Form::label('Region/State',null,['class'=>'col-md-4 control-label'])}}
+
+
+                            <div class="col-md-6">
+                                {{Form::select('region_id',$regions,$building->region->id,['class'=>'form-control'])}}
+                                @if ($errors->has('region_id'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('region_id') }}</strong>
                                 </span>
                                 @endif
                             </div>

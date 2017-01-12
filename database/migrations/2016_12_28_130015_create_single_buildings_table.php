@@ -25,8 +25,11 @@ class CreateSingleBuildingsTable extends Migration
             $table->string('purchase_price')->nullable();
             $table->string('property_tax')->nullable();
             $table->string('square_feet')->nullable();
+            $table->integer('region_id')->nullable();
+            $table->string('total_floor_area')->nullable();
             $table->string('status');
             $table->string('district_id');
+            $table->string('real_id')->nullable(); //foreign key
             $table->string('zoning');
 
             $table->softDeletes(); //

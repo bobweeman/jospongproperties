@@ -7,6 +7,7 @@ use App\City;
 use App\Country;
 use App\District;
 use App\Http\Requests\BareLandRequest;
+use App\RegionState;
 use App\Tenant;
 use App\TenantCommercial;
 use Illuminate\Http\Request;
@@ -37,7 +38,8 @@ class BareLandController extends Controller
         $cities = City::latest()->orderBy('name','desc')->pluck('name','id');
         $districts = District::latest()->orderBy('name','desc')->pluck('name','id');
         $countries = Country::latest()->orderBy('name','desc')->pluck('name','id');
-        return view('bare_land',compact('cities','districts','countries'));
+        $regions = RegionState::latest()->orderBy('name','desc')->pluck('name','id');
+        return view('bare_land',compact('cities','districts','countries','regions'));
     }
 
     /**
@@ -49,7 +51,10 @@ class BareLandController extends Controller
     public function store(BareLandRequest $request)
     {
         //
-        BareLand::create($request->all());
+       $current= BareLand::create($request->all());
+        $generator = "single".BareLand::all()->count();
+        $current->real_id = $generator;
+        $current->update();
         Session::flash('success','Bare-land created successfully');
         return redirect(route('bare_land.index'));
     }
@@ -80,8 +85,10 @@ class BareLandController extends Controller
         $cities = City::latest()->orderBy('name','desc')->pluck('name','id');
         $districts = District::latest()->orderBy('name','desc')->pluck('name','id');
         $countries = Country::latest()->orderBy('name','desc')->pluck('name','id');
-        $building=BareLand::with('city','tenant','district')->find($id);
-        return view('EditBareLand',compact('building','tenants','cities','countries','districts'));
+        $regions = RegionState::latest()->orderBy('name','desc')->pluck('name','id');
+
+        $building=BareLand::with('city','tenant','district','region')->find($id);
+        return view('EditBareLand',compact('building','tenants','cities','countries','districts','regions'));
     }
 
     /**

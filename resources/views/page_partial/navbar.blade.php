@@ -300,8 +300,8 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bare Land</a>
                             <ul class="dropdown-menu">
                                 <li class="menu-item ">
-                                {{--<li><a href="{{route('bare_land_physi.create')}}" >New</a></li>--}}
-                                {{--<li><a href="{{route('bare_land_physical.index')}}" >List</a></li>--}}
+                                <li><a href="{{route('bare_land_legal.create')}}" >New</a></li>
+                                <li><a href="{{route('bare_land_legal.index')}}" >List</a></li>
                                 </li>
 
                             </ul>
@@ -310,9 +310,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Multi-Unit Building</a>
                             <ul class="dropdown-menu">
                                 <li class="menu-item ">
-                                <li><a href="{{route('multi_unit_physical.create')}}" >New</a></li>
+                                {{--<li><a href="{{route('multi_unit_physical.create')}}" >New</a></li>--}}
 
-                                <li><a href="{{route('multi_unit_physical.index')}}" >List</a></li>
+                                {{--<li><a href="{{route('multi_unit_physical.index')}}" >List</a></li>--}}
 
                             </ul>
                         </li>

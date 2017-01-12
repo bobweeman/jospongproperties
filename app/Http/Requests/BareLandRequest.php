@@ -29,11 +29,13 @@ class BareLandRequest extends FormRequest
             'address'=>'required|min:2',
             'district_id'=>'required|numeric',
             'city_id'=>'required|numeric',
+            'region_id'=>'required|numeric',
             'country_id'=>'required|numeric',
-            'purchase_price'=>'required|numeric',
-            'property_tax'=>'required|numeric',
+            'purchase_price'=>'numeric',
+            'property_tax'=>'numeric',
             'status'=>'required|min:2',
-            'zoning'=>'required|min:2'
+            'zoning'=>'required|min:2',
+            'square_feet'=>'numeric'
         ];
     }
 }

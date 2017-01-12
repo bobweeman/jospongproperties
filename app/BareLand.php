@@ -9,7 +9,7 @@ class BareLand extends Model
     //mass assignment
     protected $fillable=[
         'name','address','purchase_price','property_tax','square_feet','status','city_id','district_id','region_id',
-        'country_id','tenant_id','purchaser_id','zoning'
+        'country_id','tenant_id','purchaser_id','zoning','square_feet'
     ];
 
     //defining relationship
@@ -24,7 +24,7 @@ class BareLand extends Model
         return $this->belongsTo('\App\District','district_id','id');
     }
     public function region(){//region relationship
-        return $this->belongsTo('\App\Region','region_id','id');
+        return $this->belongsTo('\App\RegionState','region_id','id');
     }
     public function tenant(){//tenant relationship - single unit building
         return $this->belongsTo('\App\Tenant','tenant_id','id');
