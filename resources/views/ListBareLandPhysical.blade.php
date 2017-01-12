@@ -30,6 +30,16 @@
 
                               <tr>
                                   <td>{{$bareland->name}}</td>
+                                  @if($bareland->physical == null)
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                     @else
                                   <td>{{$bareland->physical->fenced}}</td>
                                   @if($bareland->physical->fence_type !='0')
                                   <td>{{$bareland->physical->fence_type}}</td>
@@ -48,10 +58,16 @@
                                   @else
                                       <td class="text-danger">No data</td>
                                   @endif
-
+                                  @if($bareland->physical->occupier !="")
                                   <td>{{$bareland->physical->occupier}}</td>
-
-                                  <td>{{$bareland->physical->vulnerability}}</td>
+                                   @else
+                                      <td class="text-danger">No Data</td>
+                                      @endif
+                                      @if($bareland->physical->vulneralbility !="")
+                                          <td>{{$bareland->physical->vulneralbility}}</td>
+                                      @else
+                                          <td class="text-danger">No Data</td>
+                                      @endif
 
 
 
@@ -63,6 +79,9 @@
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i></button>
                                       </form>
+                                  </td>
+
+                                  @endif
                               </tr>
                           @endforeach
                           </tbody>

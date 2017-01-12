@@ -43,6 +43,11 @@ class SingleBuilding extends Model
         return $this->belongsTo('\App\Subsidiary','purchaser_id','id');
     }
 
+    public function physical(){//physical relationship -
+        return $this->hasOne('\App\Physical','building_id','real_id');
+
+    }
+
 //    //creating an accessor for ID
 //    public function getIdAttribute($value){
 //        return $this->attributes['id']= $value."_single";

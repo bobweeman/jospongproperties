@@ -19,9 +19,9 @@ class SingleBuildingPhysicalController extends Controller
     public function index()
     {
         //
-        $physicals = Physical::with('SingleBuilding')->latest()->orderBy('created_at','desc')->get();
-//        dd($physicals);
-        return view('ListSingleBuildingPhysical',compact('physicals'));
+        $singlebuildings = SingleBuilding::with('physical')->latest()->orderBy('created_at','desc')->get();
+        dd($singlebuildings);
+        return view('ListSingleBuildingPhysical',compact('singlebuildings'));
     }
 
     /**

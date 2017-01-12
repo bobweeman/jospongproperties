@@ -25,40 +25,40 @@
                           <tbody>
 
 
-                          @foreach($physicals as $physical)
+                          @foreach($singlebuildings as $singlebuilding)
 
 
                               <tr>
-                                  <td>{{$physical->SingleBuilding->name}}</td>
-                                  <td>{{$physical->fenced}}</td>
-                                  @if($physical->fence_type !='0')
-                                  <td>{{$physical->fence_type}}</td>
+                                  <td>{{$singlebuilding->name}}</td>
+                                  <td>{{$singlebuilding->physical->fenced}}</td>
+                                  @if($singlebuilding->physical->fence_type !='0')
+                                  <td>{{$singlebuilding->physical->fence_type}}</td>
                                       @else
                                       <td class="text-danger">No data</td>
                                   @endif
-                                  <td>{{$physical->gated}}</td>
-                                  @if($physical->gate_type !='0')
-                                  <td>{{$physical->gate_type}}</td>
+                                  <td>{{$singlebuilding->physical->gated}}</td>
+                                  @if($singlebuilding->physical->gate_type !='0')
+                                  <td>{{$singlebuilding->physical->gate_type}}</td>
                                   @else
                                       <td class="text-danger">No data</td>
                                   @endif
-                                  <td>{{$physical->encroached}}</td>
-                                  @if($physical->encroach_details !=null)
-                                  <td>{{$physical->encroach_details}}</td>
+                                  <td>{{$singlebuilding->physical->encroached}}</td>
+                                  @if($singlebuilding->physical->encroach_details !=null)
+                                  <td>{{$singlebuilding->physical->encroach_details}}</td>
                                   @else
                                       <td class="text-danger">No data</td>
                                   @endif
 
-                                  <td>{{$physical->occupier}}</td>
+                                  <td>{{$singlebuilding->physical->occupier}}</td>
 
-                                  <td>{{$physical->vulnerability}}</td>
-
-
+                                  <td>{{$singlebuilding->physical->vulnerability}}</td>
 
 
-                                  <td><a href="{{route('single_physical.edit',$physical->id)}}" ><span class="fa fa-edit fa-2x"></span></a></td>
+
+
+                                  <td><a href="{{route('single_physical.edit',$singlebuilding->physical->id)}}" ><span class="fa fa-edit fa-2x"></span></a></td>
                                   <td>
-                                      <form method="POST" action="{{route('single_physical.destroy',$physical->id)}}">
+                                      <form method="POST" action="{{route('single_physical.destroy',$singlebuilding->physical->id)}}">
                                           <input type="hidden" name="_method" value="DELETE">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i></button>
