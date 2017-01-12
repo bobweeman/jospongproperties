@@ -66,6 +66,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('region_id') ? ' has-error' : '' }}">
+                            {{Form::label('Region/State',null,['class'=>'col-md-4 control-label'])}}
+
+
+                            <div class="col-md-6">
+                                {{Form::select('region_id',$regions,$building->region->id,['class'=>'form-control'])}}
+                                @if ($errors->has('region_id'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('region_id') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('country_id') ? ' has-error' : '' }}">
                             {{Form::label('country',null,['class'=>'col-md-4 control-label'])}}
 
@@ -114,6 +127,19 @@
                                 @if ($errors->has('square_feet'))
                                     <span class="help-block">
                                     <strong>{{ $errors->first('square_feet') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('total_floor_area') ? ' has-error' : '' }}">
+                            {{Form::label('total_floor_area',null,['class'=>'col-md-4 control-label'])}}
+
+
+                            <div class="col-md-6">
+                                {{Form::text('total_floor_area',null,['class'=>'form-control'])}}
+                                @if ($errors->has('total_floor_area'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('total_floor_area') }}</strong>
                                 </span>
                                 @endif
                             </div>

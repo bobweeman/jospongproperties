@@ -10,7 +10,7 @@ class MultiBuilding extends Model
 {
     //mass assignment
     protected $fillable=[
-        'name','address','district_id','city_id','country_id','purchase_price','property_tax','status','square_feet'
+        'name','address','district_id','city_id','country_id','purchase_price','property_tax','status','square_feet','region_id','total_floor_area'
     ];
 
 
@@ -32,6 +32,6 @@ class MultiBuilding extends Model
         return $this->belongsTo('\App\District','district_id','id');
     }
     public function region(){//region relationship
-        return $this->belongsTo('\App\Region','region_id','id');
+        return $this->belongsTo('\App\RegionState','region_id','id');
     }
 }

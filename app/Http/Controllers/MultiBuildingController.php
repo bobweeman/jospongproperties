@@ -7,6 +7,7 @@ use App\Country;
 use App\District;
 use App\Http\Requests\MultiBuildingRequest;
 use App\MultiBuilding;
+use App\RegionState;
 use Illuminate\Http\Request;
 Use Session;
 
@@ -35,8 +36,9 @@ class MultiBuildingController extends Controller
         //
         $cities = City::latest()->orderBy('name','desc')->pluck('name','id');
         $districts = District::latest()->orderBy('name','desc')->pluck('name','id');
+        $regions = RegionState::latest()->orderBy('name','desc')->pluck('name','id');
         $countries = Country::latest()->orderBy('name','desc')->pluck('name','id');
-        return view('multibuilding',compact('cities','districts','countries'));
+        return view('multibuilding',compact('cities','districts','countries','regions'));
     }
 
     /**
@@ -48,7 +50,10 @@ class MultiBuildingController extends Controller
     public function store(MultiBuildingRequest $request)
     {
         //
-        MultiBuilding::create($request->all());
+       $current= MultiBuilding::create($request->all());
+        $generator = "multi".MultiBuilding::all()->count();
+        $current->real_id = $generator;
+        $current->update();
         Session::flash('success','New multi building created successfully');
         return redirect(route('multi_unit_building.index'));
     }
@@ -76,8 +81,10 @@ class MultiBuildingController extends Controller
         $cities = City::latest()->orderBy('name','desc')->pluck('name','id');
         $districts = District::latest()->orderBy('name','desc')->pluck('name','id');
         $countries = Country::latest()->orderBy('name','desc')->pluck('name','id');
-        $building = MultiBuilding::with('country','city','district')->find($id);
-        return view('EditMultiBuilding',compact('cities','districts','countries','building'));
+        $regions = RegionState::latest()->orderBy('name','desc')->pluck('name','id');
+        $building = MultiBuilding::with('country','city','district','region')->find($id);
+//        dd($building);
+        return view('EditMultiBuilding',compact('cities','districts','countries','building','regions'));
     }
 
     /**

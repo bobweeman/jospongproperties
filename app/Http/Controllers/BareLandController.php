@@ -52,7 +52,7 @@ class BareLandController extends Controller
     {
         //
        $current= BareLand::create($request->all());
-        $generator = "single".BareLand::all()->count();
+        $generator = "bareland".BareLand::all()->count();
         $current->real_id = $generator;
         $current->update();
         Session::flash('success','Bare-land created successfully');

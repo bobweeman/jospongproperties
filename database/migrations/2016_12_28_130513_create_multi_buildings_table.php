@@ -18,14 +18,16 @@ class CreateMultiBuildingsTable extends Migration
 
             $table->string('name');
             $table->string('address');
-            $table->string('district_id');
-            $table->string('city_id');
-            $table->string('country_id');
-            $table->string('purchase_price');
-            $table->string('property_tax');
-            $table->string('square_feet');
+            $table->integer('district_id');
+            $table->integer('city_id');
+            $table->integer('country_id');
+            $table->integer('region_id');
+            $table->string('purchase_price')->nullable();
+            $table->string('property_tax')->nullable();
+            $table->string('square_feet')->nullable();
+            $table->string('total_floor_area')->nullable();
             $table->string('status');
-
+            $table->string('real_id')->nullable();//foreign key
 
             $table->softDeletes(); //
 
