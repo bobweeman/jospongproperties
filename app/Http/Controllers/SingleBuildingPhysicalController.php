@@ -32,7 +32,7 @@ class SingleBuildingPhysicalController extends Controller
     public function create()
     {
         //
-        $buildings = SingleBuilding::orderBy('name','asc')->pluck('name','id');
+        $buildings = SingleBuilding::orderBy('name','asc')->pluck('name','real_id');
         return view('phyiscal_single',compact('buildings'));
     }
 
@@ -46,7 +46,7 @@ class SingleBuildingPhysicalController extends Controller
     {
         //
         Physical::create($request->all());
-        Session::flash('success','Phyical details for single unit building created succcessfully');
+        Session::flash('success','Physical details for single unit building created succcessfully');
         return redirect(route('single_physical.index'));
     }
 

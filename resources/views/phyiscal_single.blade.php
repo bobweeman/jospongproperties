@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('fence_type') ? ' has-error' : '' }}" id="fenced_id">
+                    <div class="form-group{{ $errors->has('fence_type') ? ' has-error' : '' }}" id="fenced_type">
                         {!! Form::label('fence_type',null,['class'=>'col-md-4 control-label'])!!}
 
 

@@ -29,7 +29,7 @@ class PhysicalRequest extends FormRequest
 //            'gated'=>'required',
 //            'occupier'=>'required',
 //            'encroach'=>'required',
-            'building_id'=>'required|numeric',
+            'building_id'=>'required',
         ];
     }
 }

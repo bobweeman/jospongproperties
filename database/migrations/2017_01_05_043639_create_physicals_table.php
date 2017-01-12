@@ -24,7 +24,7 @@ class CreatePhysicalsTable extends Migration
             $table->text('vulnerability')->nullable();
             $table->string('encroached');
             $table->string('encroach_details')->default('No Data');
-            $table->integer('building_id');
+            $table->string('building_id');
             $table->timestamps();
         });
     }
