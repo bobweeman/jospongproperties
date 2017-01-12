@@ -32,7 +32,7 @@ class MultiUnitPhysicalController extends Controller
     public function create()
     {
         //
-        $buildings = MultiBuilding::orderBy('name','asc')->pluck('name','id');
+        $buildings = MultiBuilding::orderBy('name','asc')->pluck('name','real_id');
         return view('physical_multi_building',compact('buildings'));
     }
 
