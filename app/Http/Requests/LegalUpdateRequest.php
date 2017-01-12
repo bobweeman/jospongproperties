@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LegalRequest extends FormRequest
+class LegalUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,6 @@ class LegalRequest extends FormRequest
     {
         return [
             //
-            'building_id'=>'required|numeric',
             'copy_conveyance'=>'mimes:pdf,doc,docx',
             'copy_signed_indenture'=>'mimes:pdf,doc,docx'
         ];

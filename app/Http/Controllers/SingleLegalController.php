@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LegalRequest;
+use App\Http\Requests\LegalUpdateRequest;
 use App\Legal;
 use App\SingleBuilding;
 use Illuminate\Http\Request;
@@ -83,6 +84,8 @@ class SingleLegalController extends Controller
     public function edit($id)
     {
         //
+        $legal = Legal::with('SingleBuilding')->find($id);
+        return view('EditSingleBuildingLegal',compact('legal'));
     }
 
     /**
@@ -92,9 +95,26 @@ class SingleLegalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LegalUpdateRequest $request, $id)
     {
         //
+        Legal::find($id)->update($request->all());
+
+        if ($request->hasFile('copy_conveyance')){ //get newly created conveyance and add file upload location
+            $conveyance=request()->file('copy_conveyance')->store('conveyance');
+            $merge=Legal::find($id);
+            $merge->copy_conveyance =$conveyance;
+            $merge->update();
+        }
+        if ($request->hasFile('copy_signed_indenture')){ //get newly created signed indenture and add file upload location
+            $indenture=request()->file('copy_signed_indenture')->store('indenture');
+            $merge=Legal::find($id);
+            $merge->copy_signed_indenture =$indenture;
+            $merge->update();
+        }
+
+        Session::flash('info','Legal details for single unit updated successfully');
+        return redirect(route('single_legal.index'));
     }
 
     /**
