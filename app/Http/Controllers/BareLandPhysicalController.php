@@ -14,9 +14,10 @@ class BareLandPhysicalController extends Controller
     public function index()
     {
         //
-        $physicals = Physical::with('BareLand')->latest()->orderBy('created_at','desc')->get();
-//        dd($physicals);
-        return view('ListBareLandPhysical',compact('physicals'));
+        $barelands = BareLand::with('physical')->latest()->orderBy('created_at','desc')->get();
+//        dd($barelands);
+
+        return view('ListBareLandPhysical',compact('barelands'));
     }
 
     /**
@@ -39,7 +40,13 @@ class BareLandPhysicalController extends Controller
      */
     public function store(PhysicalRequest $request)
     {
-        //
+        //checking if building doesn't have physical details already
+        $check = Physical::where('building_id',$request->building_id)->count();
+        if($check >0){
+            Session::flash('warning','Physical details already exists for building! Use the EDIT option under LIST');
+            return redirect(route('bare_land_physical.index'));
+        }
+//        dd($check);
         Physical::create($request->all());
         Session::flash('success','Physical details for bare land created succcessfully');
         return redirect(route('bare_land_physical.index'));

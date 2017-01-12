@@ -32,8 +32,13 @@ class BareLand extends Model
     public function tenantCom(){//tenant relationship - single unit building
         return $this->belongsTo('\App\TenantCommercial','tenant_id','id');
     }
-    public function purchaser(){//purchaser relationship - single unit building
+    public function purchaser(){//purchaser relationship -
         return $this->belongsTo('\App\Subsidiary','purchaser_id','id');
+
+    }
+
+    public function physical(){//purchaser relationship -
+        return $this->hasOne('\App\Physical','building_id','real_id');
 
     }
 

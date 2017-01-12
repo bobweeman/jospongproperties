@@ -91,8 +91,7 @@
                         close: {height: 'toggle'}, // or Animate.css class names like: 'animated bounceOutLeft'
                         easing: 'swing',
                         speed: 500 // opening & closing animation speed
-                    },
-                    text:'{{Session::get('error')}}'
+                    }
                 });
 
                 @endif
@@ -108,9 +107,25 @@
                         close: {height: 'toggle'}, // or Animate.css class names like: 'animated bounceOutLeft'
                         easing: 'swing',
                         speed: 500 // opening & closing animation speed
-                    },
-                    text:'{{Session::get('info')}}'
+                    }
+
                 });
+
+        @endif
+          @if(Session::has('warning'))
+                noty({
+            type:'warning',
+            theme:'defaultTheme',
+            layout:'bottom',
+            text:'{{Session::get('warning')}}',
+            timeout: 5000, // delay for closing event in milliseconds. Set false for sticky notifications
+            animation: {
+                open: {height: 'toggle'}, // or Animate.css class names like: 'animated bounceInLeft'
+                close: {height: 'toggle'}, // or Animate.css class names like: 'animated bounceOutLeft'
+                easing: 'swing',
+                speed: 500 // opening & closing animation speed
+            }
+        });
 
         @endif
     </script>
