@@ -27,7 +27,7 @@ class BareLandPhysicalController extends Controller
     public function create()
     {
         //
-        $buildings = BareLand::orderBy('name','asc')->pluck('name','id');
+        $buildings = BareLand::orderBy('name','asc')->pluck('name','real_id');
         return view('physical_bareland',compact('buildings'));
     }
 

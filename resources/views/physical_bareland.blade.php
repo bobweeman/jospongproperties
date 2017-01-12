@@ -43,8 +43,8 @@
 
 
                         <div class="col-md-6">
-                            {{Form::select('fence_type',['wire mesh','Wire Mesh','sandcrate block'=>'Sandcrate Block',
-                            'concrete wall'=>'Concrete Wall','other'=>'Other'],['no'],['class'=>'form-control'])}}
+                            {{Form::select('fence_type',['no data'=>'','wire mesh'=>'Wire Mesh','sandcrate block'=>'Sandcrate Block',
+                            'concrete wall'=>'Concrete Wall','other'=>'Other'],['no data'],['class'=>'form-control'])}}
                             @if ($errors->has('fence_type'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('fence_type') }}</strong>
