@@ -8,7 +8,7 @@
                 <div class="panel-heading">New Legal Details Entry (Single Unit Buildings)</div>
 
                 <div class="panel-body">
-                    {!! Form::open(['route'=>'single_legal.store','class'=>'form-horizontal'])!!}
+                    {!! Form::open(['route'=>'single_legal.store','class'=>'form-horizontal','enctype'=>'multipart/form-data'])!!}
 
                     <div class="form-group{{ $errors->has('building_id') ? ' has-error' : '' }}">
                         {{Form::label('building (single-unit)',null,['class'=>'col-md-4 control-label'])}}
@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('plot_details') ? ' has-error' : '' }}" id="fenced_id">
+                    <div class="form-group{{ $errors->has('plot_details') ? ' has-error' : '' }}" id="plot_details">
                         {!! Form::label('plot_details',null,['class'=>'col-md-4 control-label'])!!}
 
 
@@ -65,7 +65,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('stamp_duty_details') ? ' has-error' : '' }}" id="fenced_id">
+                    <div class="form-group{{ $errors->has('stamp_duty_details') ? ' has-error' : '' }}" id="stamp_duty_details">
                         {!! Form::label('stamp_duty_details',null,['class'=>'col-md-4 control-label'])!!}
 
 
@@ -92,7 +92,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('registered_deed_details') ? ' has-error' : '' }}" id="fenced_id">
+                    <div class="form-group{{ $errors->has('registered_deed_details') ? ' has-error' : '' }}" id="registered_deed_details">
                         {!! Form::label('registered_deed_details',null,['class'=>'col-md-4 control-label'])!!}
 
 
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                     <div class="form-group{{ $errors->has('registered_title') ? ' has-error' : '' }}">
-                        {{Form::label('registered_title?',null,['class'=>'col-md-4 control-label'])}}
+                        {{Form::label('registered_title',null,['class'=>'col-md-4 control-label'])}}
 
 
                         <div class="col-md-6">
@@ -119,7 +119,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('registered_title_details') ? ' has-error' : '' }}" id="fenced_id">
+                    <div class="form-group{{ $errors->has('registered_title_details') ? ' has-error' : '' }}" id="registered_title_details">
                         {!! Form::label('registered_title_details',null,['class'=>'col-md-4 control-label'])!!}
 
 
@@ -146,7 +146,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('litigation_status_details') ? ' has-error' : '' }}" id="fenced_id">
+                    <div class="form-group{{ $errors->has('litigation_status_details') ? ' has-error' : '' }}" id="litigation_status_details">
                         {!! Form::label('litigation_status_details',null,['class'=>'col-md-4 control-label'])!!}
 
 
@@ -173,12 +173,12 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('head_conveyance') ? ' has-error' : '' }}" id="fenced_id">
+                    <div class="form-group{{ $errors->has('head_conveyance') ? ' has-error' : '' }}" >
                         {!! Form::label('head_conveyance',null,['class'=>'col-md-4 control-label'])!!}
 
 
                         <div class="col-md-6">
-                            {{Form::text('head_conveyance',null,['class'=>'form-control'])}}
+                            {{Form::text('head_conveyance',null,['class'=>'form-control','id'=>'head_conveyance'])}}
                             @if ($errors->has('head_conveyance'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('head_conveyance') }}</strong>
@@ -187,15 +187,15 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('copy_of_conveyance') ? ' has-error' : '' }}">
-                        {{Form::label('copy_of_conveyance?',null,['class'=>'col-md-4 control-label'])}}
+                    <div class="form-group{{ $errors->has('copy_conveyance') ? ' has-error' : '' }}" id='copy_conveyance'>
+                        {{Form::label('copy_of_conveyance',null,['class'=>'col-md-4 control-label'])}}
 
 
                         <div class="col-md-6">
-                            {{Form::file('copy_of_conveyance',null,['class'=>'form-control','id'=>'copy_of_conveyance'])}}
-                            @if ($errors->has('copy_of_conveyance'))
+                            {{Form::file('copy_conveyance',null,['class'=>'form-control'])}}
+                            @if ($errors->has('copy_conveyance'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('copy_of_conveyance') }}</strong>
+                                    <strong>{{ $errors->first('copy_conveyance') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -215,12 +215,12 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('copy_signed_indenture') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('copy_signed_indenture') ? ' has-error' : '' }}" id='copy_signed_indenture'>
                         {{Form::label('copy_signed_indenture?',null,['class'=>'col-md-4 control-label'])}}
 
 
                         <div class="col-md-6">
-                            {{Form::file('copy_signed_indenture',null,['class'=>'form-control','id'=>'copy_signed_indenture'])}}
+                            {{Form::file('copy_signed_indenture',null,['class'=>'form-control'])}}
                             @if ($errors->has('copy_signed_indenture'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('copy_signed_indenture') }}</strong>

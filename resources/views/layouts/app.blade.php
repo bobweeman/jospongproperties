@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Jospong Properties') }}</title>
+    <title>Jospong Properties</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -59,6 +59,7 @@
     <script src="/js/app.js"></script>
     <script src="/js/own.js"></script>
     <script src="/js/physical_hide.js" type="text/javascript"></script>
+    <script src="/js/legal_hide.js" type="text/javascript"></script>
     <!--Notifications-->
     <script>
         @if(Session::has('success'))

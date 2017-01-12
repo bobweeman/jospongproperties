@@ -25,7 +25,9 @@ class LegalRequest extends FormRequest
     {
         return [
             //
-            'building_id'=>'required|numeric'
+            'building_id'=>'required|numeric',
+            'copy_conveyance'=>'mimes:pdf',
+            'copy_signed_indenture'=>'mimes:pdf'
         ];
     }
 }

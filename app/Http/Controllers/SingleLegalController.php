@@ -43,7 +43,22 @@ class SingleLegalController extends Controller
     public function store(LegalRequest $request)
     {
         //
-        Legal::create($request->all());
+
+        $legal=Legal::create($request->all());
+
+        if ($request->hasFile('copy_conveyance')){ //get newly created conveyance and add file upload location
+            $conveyance=request()->file('copy_conveyance')->store('conveyance');
+            $merge=Legal::find($legal->id);
+            $merge->copy_conveyance =$conveyance;
+            $merge->update();
+        }
+        if ($request->hasFile('copy_signed_indenture')){ //get newly created signed indenture and add file upload location
+            $indenture=request()->file('copy_signed_indenture')->store('indenture');
+            $merge=Legal::find($legal->id);
+            $merge->copy_signed_indenture =$indenture;
+            $merge->update();
+        }
+
         Session::flash('success','Legal details for single unit created successfully');
         return redirect(route('single_legal.index'));
     }
@@ -91,5 +106,9 @@ class SingleLegalController extends Controller
     public function destroy($id)
     {
         //
+        Legal::destroy($id);
+        Session::flash('error','Legal details for single unit deleted successfully');
+        return redirect(route('single_legal.index'));
+
     }
 }
