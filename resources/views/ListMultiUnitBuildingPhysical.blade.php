@@ -25,45 +25,58 @@
                           <tbody>
 
 
-                          @foreach($physicals as $physical)
+                          @foreach($multibuildings as $multibuilding)
 
 
                               <tr>
-                                  <td>{{$physical->MultiBuilding->name}}</td>
-                                  <td>{{$physical->fenced}}</td>
-                                  @if($physical->fence_type !='0')
-                                  <td>{{$physical->fence_type}}</td>
+                                  @if($multibuilding->physical == null)
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                  @else
+                                  <td>{{$multibuilding->physical->MultiBuilding->name}}</td>
+                                  <td>{{$multibuilding->physical->fenced}}</td>
+                                  @if($multibuilding->physical->fence_type !='0')
+                                  <td>{{$multibuilding->physical->fence_type}}</td>
                                       @else
                                       <td class="text-danger">No data</td>
                                   @endif
-                                  <td>{{$physical->gated}}</td>
-                                  @if($physical->gate_type !='0')
-                                  <td>{{$physical->gate_type}}</td>
+                                  <td>{{$multibuilding->physical->gated}}</td>
+                                  @if($multibuilding->physical->gate_type !='0')
+                                  <td>{{$multibuilding->physical->gate_type}}</td>
                                   @else
                                       <td class="text-danger">No data</td>
                                   @endif
-                                  <td>{{$physical->encroached}}</td>
-                                  @if($physical->encroach_details !=null)
-                                  <td>{{$physical->encroach_details}}</td>
+                                  <td>{{$multibuilding->physical->encroached}}</td>
+                                  @if($multibuilding->physical->encroach_details !=null)
+                                  <td>{{$multibuilding->physical->encroach_details}}</td>
                                   @else
                                       <td class="text-danger">No data</td>
                                   @endif
 
-                                  <td>{{$physical->occupier}}</td>
+                                  <td>{{$multibuilding->physical->occupier}}</td>
 
-                                  <td>{{$physical->vulnerability}}</td>
-
-
+                                  <td>{{$multibuilding->physical->vulnerability}}</td>
 
 
-                                  <td><a href="{{route('multi_unit_physical.edit',$physical->id)}}" ><span class="fa fa-edit fa-2x"></span></a></td>
+
+
+                                  <td><a href="{{route('multi_unit_physical.edit',$multibuilding->physical->id)}}" ><span class="fa fa-edit fa-2x"></span></a></td>
                                   <td>
-                                      <form method="POST" action="{{route('multi_unit_physical.destroy',$physical->id)}}">
+                                      <form method="POST" action="{{route('multi_unit_physical.destroy',$multibuilding->physical->id)}}">
                                           <input type="hidden" name="_method" value="DELETE">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i></button>
                                       </form>
+                                  </td>
+                                      
                               </tr>
+                              @endif
                           @endforeach
                           </tbody>
                       </table>

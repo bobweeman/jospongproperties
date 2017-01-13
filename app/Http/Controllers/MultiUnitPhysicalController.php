@@ -19,9 +19,9 @@ class MultiUnitPhysicalController extends Controller
     public function index()
     {
         //
-        $physicals = Physical::with('MultiBuilding')->latest()->orderBy('created_at','desc')->get();
+        $multibuildings = MultiBuilding::with('physical')->latest()->orderBy('created_at','desc')->get();
 //        dd($physicals);
-        return view('ListMultiUnitBuildingPhysical',compact('physicals'));
+        return view('ListMultiUnitBuildingPhysical',compact('multibuildings'));
     }
 
     /**

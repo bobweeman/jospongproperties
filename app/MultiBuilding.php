@@ -34,4 +34,7 @@ class MultiBuilding extends Model
     public function region(){//region relationship
         return $this->belongsTo('\App\RegionState','region_id','id');
     }
+    public function physical(){//physical relationship
+        return $this->belongsTo('\App\Physical','building_id','real_id');
+    }
 }
