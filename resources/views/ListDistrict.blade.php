@@ -8,7 +8,9 @@
                     <div class="panel-heading">City List</div>
 
                     <div class="panel-body">
-                      <table class="table-responsive table-hover table-striped col-md-12">
+                        <div class="table-responsive">
+
+                        <table class="table-hover table-striped col-md-12">
                           <thead>
                             <th>#</th>
                             <th>District</th>
@@ -39,6 +41,7 @@
                           @endforeach
                           </tbody>
                       </table>
+                            </div>
                     </div>
                 </div>
             </div>

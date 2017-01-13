@@ -311,12 +311,40 @@
                     </ul>
                 </li>
 
-                <li class="dropdown disabled">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         Multimedia <span class="fa fa-caret-down"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        {{--<li><a href="{{route('reports.create')}}" >New</a></li>--}}
-                        {{--<li><a href="{{route('reports.index')}}" >List</a></li>--}}
+                        <li class="menu-item dropdown dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Single Residence</a>
+                            <ul class="dropdown-menu">
+                                <li class="menu-item ">
+                                {{--<li><a href="{{route('single_video.multimedia')}}" >New</a></li>--}}
+                                {{--<li><a href="{{route('single_video.multimedia')}}" >List</a></li>--}}
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item dropdown dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bare Land</a>
+                            <ul class="dropdown-menu">
+                                <li class="menu-item ">
+                                {{--<li><a href="{{route('bare_land_multimedia.create')}}" >New</a></li>--}}
+                                {{--<li><a href="{{route('bare_land_multimedia.index')}}" >List</a></li>--}}
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item dropdown dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Multi-Unit Building</a>
+                            <ul class="dropdown-menu">
+                                <li class="menu-item ">
+                                {{--<li><a href="{{route('multi_building_multimedia.create')}}" >New</a></li>--}}
+
+                                {{--<li><a href="{{route('multi_building_multimedia.index')}}" >List</a></li>--}}
+
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown disabled">

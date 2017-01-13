@@ -8,7 +8,9 @@
                     <div class="panel-heading">Physical Details Multi Unit Building</div>
 
                     <div class="panel-body">
-                      <table class="table-responsive table-condensed table-hover table-striped col-md-12">
+                        <div class="table-responsive">
+
+                        <table class="table-condensed table-hover table-striped col-md-12">
                           <thead>
 
                             <th>Building Name</th>
@@ -80,6 +82,7 @@
                           @endforeach
                           </tbody>
                       </table>
+                            </div>
                     </div>
                 </div>
             </div>

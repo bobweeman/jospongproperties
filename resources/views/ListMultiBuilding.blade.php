@@ -8,7 +8,9 @@
                     <div class="panel-heading">Multi Unit Building List</div>
 
                     <div class="panel-body">
-                      <table class="table-responsive table-condensed table-hover table-striped col-md-12">
+                        <div class="table-responsive">
+
+                        <table class="table-condensed table-hover table-striped col-md-12">
                           <thead>
                             <th>#</th>
                             <th>Name</th>
@@ -79,6 +81,7 @@
                           </tbody>
                       </table>
                     </div>
+                        </div>
                 </div>
             </div>
         </div>

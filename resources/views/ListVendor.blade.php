@@ -8,7 +8,9 @@
                     <div class="panel-heading">Vendor List</div>
 
                     <div class="panel-body">
-                        <table class=" table table-responsive table-hover table-striped col-md-12">
+                        <div class="table-responsive">
+
+                        <table class="table-hover table-striped col-md-12">
                             <thead>
                             <th>#</th>
                             <th>Name</th>
@@ -47,6 +49,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                            </div>
                     </div>
                 </div>
             </div>

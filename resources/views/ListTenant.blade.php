@@ -8,7 +8,9 @@
                     <div class="panel-heading">Tenants (Residential) List</div>
 
                     <div class="panel-body">
-                      <table class="table-responsive table-condensed table-hover table-striped">
+                        <div class="table-responsive">
+
+                        <table class="table-condensed table-hover table-striped">
                           <thead>
                             <th>#</th>
                             <th>Full Name</th>
@@ -48,6 +50,7 @@
                           @endforeach
                           </tbody>
                       </table>
+                            </div>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,9 @@
                     <div class="panel-heading">Subsidiaries List</div>
 
                     <div class="panel-body">
-                      <table class="table-responsive table-condensed table-hover table-striped col-md-12">
+                        <div class="table-responsive">
+
+                        <table class="table-condensed table-hover table-striped col-md-12">
                           <thead>
 
                             <th>Name</th>
@@ -43,6 +45,7 @@
                           @endforeach
                           </tbody>
                       </table>
+                            </div>
                     </div>
                 </div>
             </div>

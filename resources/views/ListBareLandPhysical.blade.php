@@ -8,7 +8,9 @@
                     <div class="panel-heading">Physical Details Bare Land</div>
 
                     <div class="panel-body">
-                      <table class="table-responsive table-condensed table-hover table-striped col-md-12">
+                        <div class="table-responsive">
+
+                        <table class="table-condensed table-hover table-striped col-md-12">
                           <thead>
 
                             <th>Land Name</th>
@@ -86,6 +88,7 @@
                           @endforeach
                           </tbody>
                       </table>
+                            </div>
                     </div>
                 </div>
             </div>
