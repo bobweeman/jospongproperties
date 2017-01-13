@@ -16,7 +16,7 @@ class CreateLegalsTable extends Migration
         Schema::create('legals', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('building_id');
+            $table->string('building_id');
             $table->string('plotted');
             $table->text('plot_details')->nullable();
             $table->string('stamp_duty');

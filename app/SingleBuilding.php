@@ -48,6 +48,11 @@ class SingleBuilding extends Model
 
     }
 
+    public function legal(){//physical relationship -
+        return $this->hasOne('\App\Physical','building_id','real_id');
+
+    }
+
 //    //creating an accessor for ID
 //    public function getIdAttribute($value){
 //        return $this->attributes['id']= $value."_single";

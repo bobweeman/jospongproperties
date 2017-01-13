@@ -19,8 +19,8 @@ class SingleLegalController extends Controller
     public function index()
     {
         //
-        $legals = Legal::with('SingleBuilding')->latest()->orderBy('created_at','desc')->get();
-        return view('ListSingleBuildingLegal',compact('legals'));
+        $singlebuildings = SingleBuilding::with('legal')->latest()->orderBy('created_at','desc')->get();
+        return view('ListSingleBuildingLegal',compact('singlebuildings'));
     }
 
     /**
@@ -31,7 +31,7 @@ class SingleLegalController extends Controller
     public function create()
     {
         //
-        $buildings = SingleBuilding::latest()->orderBy('name', 'asc')->pluck('name','id');
+        $buildings = SingleBuilding::latest()->orderBy('name', 'asc')->pluck('name','real_id');
         return view('single_legal',compact('buildings'));
     }
 

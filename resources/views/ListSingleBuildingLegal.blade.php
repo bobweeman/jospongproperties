@@ -32,44 +32,61 @@
                           <tbody>
 
 
-                          @foreach($legals as $legal)
-
+                          @foreach($singlebuildings as $singlebuilding)
 
                               <tr>
-                                  <td>{{$legal->SingleBuilding->name}}</td>
-                                  <td>{{$legal->plotted}}</td>
-                                  <td>{{$legal->stamp_duty}}</td>
-                                  <td>{{$legal->registered_deed}}</td>
-                                  @if($legal->registered_title !=null)
-                                  <td>{{$legal->registered_title}}</td>
+                                  <td>{{$singlebuilding->name}}</td>
+                                  @if($singlebuilding->physical == null)
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">no data</td>
+                                      <td class="text-danger">N/A</td>
+                                      <td class="text-danger">N/A</td>
+                                      <td class="text-danger">N/A</td>
+                                  @else
+
+                                  <td>{{$singlebuilding->physical->plotted}}</td>
+                                  <td>{{$singlebuilding->physical->stamp_duty}}</td>
+                                  <td>{{$singlebuilding->physical->registered_deed}}</td>
+                                  @if($singlebuilding->physical->registered_title !=null)
+                                  <td>{{$singlebuilding->physical->registered_title}}</td>
                                   @else
                                       <td class="text-danger">no data</td>
                                   @endif
-                                  <td>{{$legal->litigation_status}}</td>
-                                  @if($legal->contestant_name !="")
-                                      <td>{{$legal->contestant_name}}</td>
+                                  <td>{{$singlebuilding->physical->litigation_status}}</td>
+                                  @if($singlebuilding->physical->contestant_name !="")
+                                      <td>{{$singlebuilding->physical->contestant_name}}</td>
                                   @else
                                       <td class="text-danger">no data</td>
                                   @endif
-                                  @if($legal->head_conveyance !="")
-                                      <td>{{$legal->head_conveyance}}</td>
+                                  @if($singlebuilding->physical->head_conveyance !="")
+                                      <td>{{$singlebuilding->physical->head_conveyance}}</td>
                                   @else
                                       <td class="text-danger">no data</td>
                                   @endif
-                                  <td>{{$legal->signed_indenture}}</td>
-                                  @if($legal->lodgement_by !="")
-                                      <td>{{$legal->lodgement_by}}</td>
+                                  <td>{{$singlebuilding->physical->signed_indenture}}</td>
+                                  @if($singlebuilding->physical->lodgement_by !="")
+                                      <td>{{$singlebuilding->physical->lodgement_by}}</td>
                                   @else
                                       <td class="text-danger">no data</td>
                                   @endif
-                                  @if($legal->lodgement_to !="")
-                                      <td>{{$legal->lodgement_to}}</td>
+                                  @if($singlebuilding->physical->lodgement_to !="")
+                                      <td>{{$singlebuilding->physical->lodgement_to}}</td>
                                   @else
                                       <td class="text-danger">no data</td>
                                   @endif
-                                  <td>{{$legal->land_title}}</td>
-                                  @if($legal->land_status !="")
-                                      <td>{{$legal->land_status}}</td>
+                                  <td>{{$singlebuilding->physical->land_title}}</td>
+                                  @if($singlebuilding->physical->land_status !="")
+                                      <td>{{$singlebuilding->physical->land_status}}</td>
                                   @else
                                       <td class="text-danger">no data</td>
                                   @endif
@@ -77,15 +94,17 @@
 
 
 
-                                  <td><a href="{{route('single_legal.edit',$legal->id)}}" ><span class="fa fa-edit fa-2x"></span></a></td>
+                                  <td><a href="{{route('single_legal.edit',$singlebuilding->physical->id)}}" ><span class="fa fa-edit fa-2x"></span></a></td>
                                   <td><a href="" ><span class="fa fa-spin fa-arrows-alt fa-2x text-warning"></span></a></td>
                                   <td>
-                                      <form method="POST" action="{{route('single_legal.destroy',$legal->id)}}">
+                                      <form method="POST" action="{{route('single_legal.destroy',$singlebuilding->physical->id)}}">
                                           <input type="hidden" name="_method" value="DELETE">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i></button>
                                       </form>
+                                  </td>
                               </tr>
+                              @endif
                           @endforeach
                           </tbody>
                       </table>

@@ -15,11 +15,16 @@ class Legal extends Model
 
     //creating relationship
     public function SingleBuilding(){
-        return $this->belongsTo('App\SingleBuilding','building_id','id');
+        return $this->belongsTo('App\SingleBuilding','building_id','real_id');
     }
 
     //creating relationship
     public function BareLand(){
-        return $this->belongsTo('App\BareLand','building_id','id');
+        return $this->belongsTo('App\BareLand','building_id','real_id');
+    }
+
+    //creating relationship
+    public function MultiBuilding(){
+        return $this->belongsTo('App\BareLand','building_id','real_id');
     }
 }

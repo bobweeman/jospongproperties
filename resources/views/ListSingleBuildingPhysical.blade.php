@@ -26,7 +26,16 @@
 
 
                           @foreach($singlebuildings as $singlebuilding)
-
+                              @if($singlebuilding->physical == null)
+                                  <td class="text-danger">no data</td>
+                                  <td class="text-danger">no data</td>
+                                  <td class="text-danger">no data</td>
+                                  <td class="text-danger">no data</td>
+                                  <td class="text-danger">no data</td>
+                                  <td class="text-danger">no data</td>
+                                  <td class="text-danger">no data</td>
+                                  <td class="text-danger">no data</td>
+                              @else
 
                               <tr>
                                   <td>{{$singlebuilding->name}}</td>
@@ -64,6 +73,7 @@
                                           <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i></button>
                                       </form>
                               </tr>
+                              @endif
                           @endforeach
                           </tbody>
                       </table>
