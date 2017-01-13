@@ -269,15 +269,7 @@
                                 <li><a href="{{route('multi_unit_physical.create')}}" >New</a></li>
 
                                 <li><a href="{{route('multi_unit_physical.index')}}" >List</a></li>
-                                {{--<li class="dropdown-submenu"><a href="" >Unit</a>--}}
-                                    {{--<ul class="dropdown-menu ">--}}
-                                        {{--<li class="menu-item ">--}}
-                                        {{--<li><a href="{{route('building_unit_physical.create')}}">New</a></li>--}}
-                                        {{--<li><a href="{{route('building_unit_physical.index')}}">List</a></li>--}}
 
-                                        {{--</li>--}}
-                                    {{--</ul>--}}
-                                {{--</li>--}}
                             </ul>
                         </li>
                     </ul>
@@ -310,9 +302,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Multi-Unit Building</a>
                             <ul class="dropdown-menu">
                                 <li class="menu-item ">
-                                {{--<li><a href="{{route('multi_unit_physical.create')}}" >New</a></li>--}}
+                                <li><a href="{{route('multi_building_legal.create')}}" >New</a></li>
 
-                                {{--<li><a href="{{route('multi_unit_physical.index')}}" >List</a></li>--}}
+                                <li><a href="{{route('multi_building_legal.index')}}" >List</a></li>
 
                             </ul>
                         </li>

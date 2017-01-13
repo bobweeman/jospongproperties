@@ -48,6 +48,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::resource('/building_unit_physical','BuildingUnitPhysicalController');
     Route::resource('/single_legal','SingleLegalController');
     Route::resource('/bare_land_legal','BareLandLegalController');
+    Route::resource('/multi_building_legal','MultiUnitBuildingLegalController');
 
 
 });

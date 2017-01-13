@@ -2,23 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\BareLand;
 use App\Http\Requests\LegalRequest;
 use App\Legal;
+use App\MultiBuilding;
 use Illuminate\Http\Request;
+use Session;
 
-class BareLandLegalController extends Controller
+class MultiUnitBuildingLegalController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
-        $barelands = BareLand::with('legal')->latest()->orderBy('created_at','desc')->get();
-        return view('ListBareLandLegal',compact('barelands'));
+        $multiunitbuildings = MultiBuilding::with('legal')->latest()->orderBy('created_at','desc')->get();
+        return view('ListMultiBuildingLegal',compact('multiunitbuildings'));
     }
 
     /**
@@ -29,8 +31,8 @@ class BareLandLegalController extends Controller
     public function create()
     {
         //
-        $buildings = BareLand::latest()->orderBy('name', 'asc')->pluck('name','real_id');
-        return view('bare_land_legal',compact('buildings'));
+        $buildings = MultiBuilding::latest()->orderBy('name', 'asc')->pluck('name','real_id');
+        return view('multi_building_legal',compact('buildings'));
     }
 
     /**
@@ -58,8 +60,8 @@ class BareLandLegalController extends Controller
             $merge->update();
         }
 
-        Session::flash('success','Legal details for bare land created successfully');
-        return redirect(route('bare_land_legal.index'));
+        Session::flash('success','Legal details for multi unit building created successfully');
+        return redirect(route('multi_building_legal.index'));
     }
 
     /**
@@ -82,8 +84,8 @@ class BareLandLegalController extends Controller
     public function edit($id)
     {
         //
-        $legal = Legal::with('BareLand')->find($id);
-        return view('EditBareLandLegal',compact('legal'));
+        $legal = Legal::with('MultiBuilding')->find($id);
+        return view('EditMultiBuildingLegal',compact('legal'));
     }
 
     /**
@@ -111,8 +113,8 @@ class BareLandLegalController extends Controller
             $merge->update();
         }
 
-        Session::flash('info','Legal details for bare land updated successfully');
-        return redirect(route('bare_land_legal.index'));
+        Session::flash('info','Legal details for multi unit building updated successfully');
+        return redirect(route('multi_building_legal.index'));
     }
 
     /**
@@ -125,8 +127,8 @@ class BareLandLegalController extends Controller
     {
         //
         Legal::destroy($id);
-        Session::flash('error','Legal details for bare land deleted successfully');
-        return redirect(route('bare_land_legal.index'));
+        Session::flash('error','Legal details for multi unit building deleted successfully');
+        return redirect(route('multi_building_legal.index'));
 
     }
 }
