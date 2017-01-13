@@ -37,7 +37,12 @@ class BareLand extends Model
 
     }
 
-    public function physical(){//purchaser relationship -
+    public function physical(){//physical relationship -
+        return $this->hasOne('\App\Physical','building_id','real_id');
+
+    }
+
+    public function legal(){//purchaser relationship -
         return $this->hasOne('\App\Physical','building_id','real_id');
 
     }

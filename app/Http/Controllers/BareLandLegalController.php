@@ -17,8 +17,8 @@ class BareLandLegalController extends Controller
     public function index()
     {
         //
-        $legals = Legal::with('BareLand')->latest()->orderBy('created_at','desc')->get();
-        return view('ListBareLandLegal',compact('legals'));
+        $barelands = BareLand::with('legal')->latest()->orderBy('created_at','desc')->get();
+        return view('ListBareLandLegal',compact('barelands'));
     }
 
     /**
